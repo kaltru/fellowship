@@ -4,6 +4,8 @@ import BattleLog from "./BattleLog.jsx";
 import GameProfiles from "./GameProfiles.jsx";
 import GameOptions from "./GameOptions.jsx";
 import DiceTray from "./DiceTray.jsx";
+import TokenTemplateList from './TokenTemplateList.jsx';
+import {eevee, ninetails, clefairy, lugia} from '../templateImages/tokenData.js';
 
 class GameRoom extends Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class GameRoom extends Component {
       players: [],
       tokens: [],
       log: [],
+      tokenImages: [eevee, ninetails, clefairy, lugia]
     }
   }
 
@@ -20,6 +23,7 @@ class GameRoom extends Component {
     return (
       <Fragment>
         <div id="gameContainer">
+          <TokenTemplateList tokenImages={this.state.tokenImages}/>
           <BattleMap />   
 
           <BattleLog />
